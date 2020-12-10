@@ -1,12 +1,12 @@
 import React from "react";
-import {ButtonExample, Props} from "../../atoms/ButtonExample";
+import {ButtonExample, Props} from "../../app/atoms/ButtonExample";
 import {Meta, Story} from "@storybook/react/types-6-0";
-import {Center} from "../../../utils/decorators/Center";
+import {Container} from "@material-ui/core";
 
 export default{
     title: "Button Example",
     component: ButtonExample,
-    decorators: [story => <Center>{story()}</Center>]
+    decorators: [story => <Container maxWidth="sm">{story()}</Container>]
 
 } as Meta;
 
