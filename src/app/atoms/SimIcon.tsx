@@ -25,7 +25,7 @@ export const SimIcon: FC<Props> = props=>{
 
     return(
         <SvgIcon className={classes.iconStyle}>
-            <SimIconSvgComponent/>
+            <SimIconSvgComponent />
         </SvgIcon>
        
     )
