@@ -1,5 +1,4 @@
 import React from "react";
-
 import MuiButton from "@material-ui/core/Button";
 import type { ButtonClassKey } from "@material-ui/core/Button";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
@@ -70,7 +69,6 @@ export function Button(props: Props) {
         <MuiButton
             disabled={disabled}
             variant="contained"
-            /*className={classes.buttonStyle}>*/
             classes={classes}
         >
 
