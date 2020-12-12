@@ -1,5 +1,5 @@
 import React from "react";
-import {ButtonExample, Props} from "../../app/atoms/ButtonExample";
+import {ButtonExample, Props} from "../../app/atoms/Button";
 import {Meta, Story} from "@storybook/react/types-6-0";
 import {Container} from "@material-ui/core";
 
