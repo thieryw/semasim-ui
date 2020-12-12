@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React from "react";
 import {makeStyles, createStyles} from "@material-ui/core/styles";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import type {SvgIconClassKey} from "@material-ui/core/SvgIcon";
@@ -21,7 +21,7 @@ const useStyle = makeStyles(
 
 
 
-export const SimIcon: FC<Props> = props=>{
+export const SimIcon = (props: Props)=>{
 
     const classes = useStyle(props);
 

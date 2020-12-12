@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React from "react";
 import {SignalCellularConnectedNoInternet0Bar, SignalCellular1Bar, SignalCellular2Bar, SignalCellular4Bar} from "@material-ui/icons";
 import type {IconClassKey} from "@material-ui/core/Icon";
 import {makeStyles, createStyles} from "@material-ui/core/styles";
@@ -27,7 +27,7 @@ const useStyle = makeStyles(
 )
 
 
-export const SignalQualityIndicator: FC<Props> = props=>{
+export const SignalQualityIndicator = (props: Props)=>{
     const {signalQuality} = props;
     const classes = useStyle(props);
     return (()=>{
