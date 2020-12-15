@@ -14,5 +14,7 @@ export const Primary = Template.bind({});
 
 Primary.args = {
     "description": "message",
-    "direction": "incoming"
+    "direction": "incoming",
+    "messageStatus": "failed",
+    "timeSent": "13 h 00"
 }
