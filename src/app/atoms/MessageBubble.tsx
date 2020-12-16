@@ -10,6 +10,8 @@ import type {IconClassKey} from "@material-ui/core/Icon";
 import {colors} from "../colorPaletteHex";
 import Sent from '@material-ui/icons/DoneAll';
 import Failed from '@material-ui/icons/ErrorOutline';
+import Grid from "@material-ui/core/Grid";
+import type {GridClassKey} from "@material-ui/core/Grid";
 
 
 
@@ -26,11 +28,12 @@ const useSurfaceStyle = makeStyles(
     ()=> createStyles<Id<PaperClassKey, "root">, Props>({
         "root": ({direction}) => ({
             "wordBreak": "break-word",
-            "padding": "10px",
+            "padding": "10px 10px 2px 10px",
             "backgroundColor": direction === "incoming" ? colors.blue : colors.grey,
             "margin": direction === "incoming" ? "0 50px 0 0" : "0 0 0 50px",
             "position": "relative"
-        })
+        }),
+        
 
     })
 );
@@ -74,40 +77,55 @@ const useStatusStyle = makeStyles(
                 }
             })(),
             "fontSize": "1.2em",
-            "position": "relative",
-            "top": "7px",
 
 
         })
 
     })
+);
+
+const useTimeStyle = makeStyles(
+    ()=> createStyles<Id<TypographyClassKey, "root">, Props>({
+        "root": ({direction}) => ({
+            "color": direction === "incoming" ? colors.grey : "grey",
+            "fontSize": "0.8em",
+
+        })
+    })
 )
+
 
 
 export const MessageBubble = (props: Props)=>{
 
-    const {description, messageStatus, direction} = props;
+    const {description, messageStatus, direction, timeSent} = props;
 
     const paperClasses = useSurfaceStyle(props);
     const typoClasses = useTypoStyle(props);
     const arrowClasses = useArrowStyle(props);
     const statusClasses = useStatusStyle(props);
+    const timeClasses = useTimeStyle(props);
 
     return (
             <Paper classes={paperClasses}>
                 <BubbleArrow classes={arrowClasses} />
                 <Typography classes={typoClasses}>{description}</Typography>
-                {
-                    direction === "outgoing" ?
-                        (()=>{
-                            switch(messageStatus){
-                                case "failed": return <Failed classes={statusClasses}/>;
-                                case "sent": return <Sent classes={statusClasses}/>;
-                            }
-                        })() :
-                        ""
+                <Grid container direction="row" justify={direction === "incoming" ? "flex-end" : "space-between"}>
+                    {
+                        direction === "outgoing" ?
+                            (()=>{
+                                switch(messageStatus){
+                                    case "failed": return <Failed classes={statusClasses}/>;
+                                    case "sent": return <Sent classes={statusClasses}/>;
+                                }
+                            })() :
+                            ""
 
-                }
+                    }
+
+                    <Typography classes={timeClasses}>{timeSent}</Typography>
+                </Grid>
+
             </Paper>
 
     )
