@@ -11,7 +11,6 @@ import {colors} from "../colorPaletteHex";
 import Sent from '@material-ui/icons/DoneAll';
 import Failed from '@material-ui/icons/ErrorOutline';
 import Grid from "@material-ui/core/Grid";
-import type {GridClassKey} from "@material-ui/core/Grid";
 
 
 
