@@ -110,7 +110,11 @@ export const MessageBubble = (props: Props)=>{
             <Paper classes={paperClasses}>
                 <BubbleArrow classes={arrowClasses} />
                 <Typography classes={typoClasses}>{description}</Typography>
-                <Grid container direction="row" justify={direction === "incoming" ? "flex-end" : "space-between"}>
+                <Grid 
+                    container 
+                    direction="row" 
+                    justify={direction === "incoming" ? "flex-end" : "space-between"}
+                >
                     {
                         direction === "outgoing" ?
                             (()=>{
