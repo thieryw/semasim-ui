@@ -29,6 +29,7 @@
     "typescript": "^4.0.5"
   },
   "scripts": {
+    "postinstall": "cd node_modules && cp -r react-scripts/node_modules/babel_loader .",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

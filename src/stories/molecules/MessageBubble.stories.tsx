@@ -1,5 +1,5 @@
 import React from "react";
-import {Props, MessageBubble} from "../../app/atoms/MessageBubble";
+import {Props, MessageBubble} from "../../app/molecules/MessageBubble";
 import type {Story} from "@storybook/react/types-6-0";
 
 export default{
